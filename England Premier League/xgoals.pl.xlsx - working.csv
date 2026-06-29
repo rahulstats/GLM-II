@@ -1,0 +1,381 @@
+Home,Away,xG,teams
+Arsenal,AstonVilla,2,Arsenal AstonVilla
+Arsenal,AstonVilla,2.7,Arsenal AstonVilla
+Arsenal,Bournemouth,0.8,Arsenal Bournemouth
+Arsenal,Bournemouth,1,Arsenal Bournemouth
+Arsenal,Brentford,-0.4,Arsenal Brentford
+Arsenal,Brentford,1,Arsenal Brentford
+Arsenal,Brighton,-0.8,Arsenal Brighton
+Arsenal,Brighton,1.7,Arsenal Brighton
+Arsenal,Chelsea,0.9,Arsenal Chelsea
+Arsenal,Chelsea,1.8,Arsenal Chelsea
+Arsenal,CrystalPalace,0.8,Arsenal CrystalPalace
+Arsenal,CrystalPalace,-0.2,Arsenal CrystalPalace
+Arsenal,Everton,1.2,Arsenal Everton
+Arsenal,Everton,-0.8,Arsenal Everton
+Arsenal,Fulham,1.8,Arsenal Fulham
+Arsenal,Fulham,1.5,Arsenal Fulham
+Arsenal,LeedsUnited,3.1,Arsenal LeedsUnited
+Arsenal,LeedsUnited,-1.3,Arsenal LeedsUnited
+Arsenal,Leicester City,2.2,Arsenal Leicester City
+Arsenal,Leicester City,0.7,Arsenal Leicester City
+Arsenal,Liverpool,1.6,Arsenal Liverpool
+Arsenal,Liverpool,-2.5,Arsenal Liverpool
+Arsenal,ManchesterCity,-0.2,Arsenal ManchesterCity
+Arsenal,ManchesterCity,-2,Arsenal ManchesterCity
+Arsenal,ManchesterUtd,2.7,Arsenal ManchesterUtd
+Arsenal,ManchesterUtd,-0.2,Arsenal ManchesterUtd
+Arsenal,NewcastleUtd,0.1,Arsenal NewcastleUtd
+Arsenal,NewcastleUtd,0,Arsenal NewcastleUtd
+Arsenal,Nott'hamForest,1.9,Arsenal Nott'hamForest
+Arsenal,Nott'hamForest,0,Arsenal Nott'hamForest
+Arsenal,Southampton,1.2,Arsenal Southampton
+Arsenal,Southampton,0.3,Arsenal Southampton
+Arsenal,Tottenham,0.8,Arsenal Tottenham
+Arsenal,Tottenham,0.2,Arsenal Tottenham
+Arsenal,WestHam,1.1,Arsenal WestHam
+Arsenal,WestHam,0.9,Arsenal WestHam
+Arsenal,Wolves,2.3,Arsenal Wolves
+Arsenal,Wolves,1.4,Arsenal Wolves
+AstonVilla,Bournemouth,2.2,AstonVilla Bournemouth
+AstonVilla,Bournemouth,0.1,AstonVilla Bournemouth
+AstonVilla,Brentford,1.9,AstonVilla Brentford
+AstonVilla,Brentford,-1.2,AstonVilla Brentford
+AstonVilla,Brighton,1.4,AstonVilla Brighton
+AstonVilla,Brighton,0.9,AstonVilla Brighton
+AstonVilla,Chelsea,0.9,AstonVilla Chelsea
+AstonVilla,Chelsea,-1.2,AstonVilla Chelsea
+AstonVilla,CrystalPalace,1,AstonVilla CrystalPalace
+AstonVilla,CrystalPalace,-1.7,AstonVilla CrystalPalace
+AstonVilla,Everton,0.7,AstonVilla Everton
+AstonVilla,Everton,0.3,AstonVilla Everton
+AstonVilla,Fulham,0.9,AstonVilla Fulham
+AstonVilla,Fulham,-0.9,AstonVilla Fulham
+AstonVilla,LeedsUnited,-1.2,AstonVilla LeedsUnited
+AstonVilla,LeedsUnited,1.8,AstonVilla LeedsUnited
+AstonVilla,Leicester City,-0.9,AstonVilla Leicester City
+AstonVilla,Leicester City,0.5,AstonVilla Leicester City
+AstonVilla,Liverpool,-1.3,AstonVilla Liverpool
+AstonVilla,Liverpool,0.6,AstonVilla Liverpool
+AstonVilla,ManchesterCity,-1.8,AstonVilla ManchesterCity
+AstonVilla,ManchesterCity,-3,AstonVilla ManchesterCity
+AstonVilla,ManchesterUtd,0.1,AstonVilla ManchesterUtd
+AstonVilla,ManchesterUtd,-0.6,AstonVilla ManchesterUtd
+AstonVilla,NewcastleUtd,1.4,AstonVilla NewcastleUtd
+AstonVilla,NewcastleUtd,-3,AstonVilla NewcastleUtd
+AstonVilla,Nott'hamForest,1.1,AstonVilla Nott'hamForest
+AstonVilla,Nott'hamForest,0.4,AstonVilla Nott'hamForest
+AstonVilla,Southampton,1.2,AstonVilla Southampton
+AstonVilla,Southampton,0.8,AstonVilla Southampton
+AstonVilla,Tottenham,-0.2,AstonVilla Tottenham
+AstonVilla,Tottenham,0.3,AstonVilla Tottenham
+AstonVilla,WestHam,-0.1,AstonVilla WestHam
+AstonVilla,WestHam,-0.6,AstonVilla WestHam
+AstonVilla,Wolves,0.9,AstonVilla Wolves
+AstonVilla,Wolves,0.7,AstonVilla Wolves
+Bournemouth,Brentford,-0.5,Bournemouth Brentford
+Bournemouth,Brentford,-0.8,Bournemouth Brentford
+Bournemouth,Brighton,-1,Bournemouth Brighton
+Bournemouth,Brighton,-1.1,Bournemouth Brighton
+Bournemouth,Chelsea,-0.1,Bournemouth Chelsea
+Bournemouth,Chelsea,-1.3,Bournemouth Chelsea
+Bournemouth,CrystalPalace,-1,Bournemouth CrystalPalace
+Bournemouth,CrystalPalace,-1.2,Bournemouth CrystalPalace
+Bournemouth,Everton,1.6,Bournemouth Everton
+Bournemouth,Everton,-0.5,Bournemouth Everton
+Bournemouth,Fulham,1.8,Bournemouth Fulham
+Bournemouth,Fulham,-1.1,Bournemouth Fulham
+Bournemouth,LeedsUnited,0.3,Bournemouth LeedsUnited
+Bournemouth,LeedsUnited,-0.7,Bournemouth LeedsUnited
+Bournemouth,Leicester City,0.1,Bournemouth Leicester City
+Bournemouth,Leicester City,1.3,Bournemouth Leicester City
+Bournemouth,Liverpool,-0.8,Bournemouth Liverpool
+Bournemouth,Liverpool,-3,Bournemouth Liverpool
+Bournemouth,ManchesterCity,-1.4,Bournemouth ManchesterCity
+Bournemouth,ManchesterCity,-1.6,Bournemouth ManchesterCity
+Bournemouth,ManchesterUtd,-0.4,Bournemouth ManchesterUtd
+Bournemouth,ManchesterUtd,-1.6,Bournemouth ManchesterUtd
+Bournemouth,NewcastleUtd,0.2,Bournemouth NewcastleUtd
+Bournemouth,NewcastleUtd,-1.2,Bournemouth NewcastleUtd
+Bournemouth,Nott'hamForest,-0.5,Bournemouth Nott'hamForest
+Bournemouth,Nott'hamForest,-1.1,Bournemouth Nott'hamForest
+Bournemouth,Southampton,0,Bournemouth Southampton
+Bournemouth,Southampton,0.4,Bournemouth Southampton
+Bournemouth,Tottenham,-1.5,Bournemouth Tottenham
+Bournemouth,Tottenham,-0.9,Bournemouth Tottenham
+Bournemouth,WestHam,-0.9,Bournemouth WestHam
+Bournemouth,WestHam,-1.5,Bournemouth WestHam
+Bournemouth,Wolves,-1.1,Bournemouth Wolves
+Bournemouth,Wolves,-0.2,Bournemouth Wolves
+Brentford,Brighton,-0.4,Brentford Brighton
+Brentford,Brighton,-2.6,Brentford Brighton
+Brentford,Chelsea,0.4,Brentford Chelsea
+Brentford,Chelsea,-0.2,Brentford Chelsea
+Brentford,CrystalPalace,-0.2,Brentford CrystalPalace
+Brentford,CrystalPalace,0.4,Brentford CrystalPalace
+Brentford,Everton,1,Brentford Everton
+Brentford,Everton,1,Brentford Everton
+Brentford,Fulham,0.7,Brentford Fulham
+Brentford,Fulham,-0.6,Brentford Fulham
+Brentford,LeedsUnited,0.6,Brentford LeedsUnited
+Brentford,LeedsUnited,-0.1,Brentford LeedsUnited
+Brentford,Leicester City,-0.7,Brentford Leicester City
+Brentford,Leicester City,0.2,Brentford Leicester City
+Brentford,Liverpool,-0.3,Brentford Liverpool
+Brentford,Liverpool,-2,Brentford Liverpool
+Brentford,ManchesterCity,-0.3,Brentford ManchesterCity
+Brentford,ManchesterCity,-0.3,Brentford ManchesterCity
+Brentford,ManchesterUtd,0.7,Brentford ManchesterUtd
+Brentford,ManchesterUtd,-0.5,Brentford ManchesterUtd
+Brentford,NewcastleUtd,1.3,Brentford NewcastleUtd
+Brentford,NewcastleUtd,-0.3,Brentford NewcastleUtd
+Brentford,Nott'hamForest,0.9,Brentford Nott'hamForest
+Brentford,Nott'hamForest,0,Brentford Nott'hamForest
+Brentford,Southampton,1.5,Brentford Southampton
+Brentford,Southampton,1.4,Brentford Southampton
+Brentford,Tottenham,0.9,Brentford Tottenham
+Brentford,Tottenham,-0.5,Brentford Tottenham
+Brentford,WestHam,3.2,Brentford WestHam
+Brentford,WestHam,0.3,Brentford WestHam
+Brentford,Wolves,0.8,Brentford Wolves
+Brentford,Wolves,0.3,Brentford Wolves
+Brighton,Chelsea,1,Brighton Chelsea
+Brighton,Chelsea,2.4,Brighton Chelsea
+Brighton,CrystalPalace,-0.5,Brighton CrystalPalace
+Brighton,CrystalPalace,1.4,Brighton CrystalPalace
+Brighton,Everton,0.9,Brighton Everton
+Brighton,Everton,0.9,Brighton Everton
+Brighton,Fulham,1.9,Brighton Fulham
+Brighton,Fulham,0.7,Brighton Fulham
+Brighton,LeedsUnited,0.2,Brighton LeedsUnited
+Brighton,LeedsUnited,1.8,Brighton LeedsUnited
+Brighton,Leicester City,1.2,Brighton Leicester City
+Brighton,Leicester City,0.8,Brighton Leicester City
+Brighton,Liverpool,0.9,Brighton Liverpool
+Brighton,Liverpool,-0.1,Brighton Liverpool
+Brighton,ManchesterCity,0.4,Brighton ManchesterCity
+Brighton,ManchesterCity,-1.1,Brighton ManchesterCity
+Brighton,ManchesterUtd,0.9,Brighton ManchesterUtd
+Brighton,ManchesterUtd,0.1,Brighton ManchesterUtd
+Brighton,NewcastleUtd,1.3,Brighton NewcastleUtd
+Brighton,NewcastleUtd,-3.1,Brighton NewcastleUtd
+Brighton,Nott'hamForest,1.6,Brighton Nott'hamForest
+Brighton,Nott'hamForest,-0.1,Brighton Nott'hamForest
+Brighton,Southampton,1.9,Brighton Southampton
+Brighton,Southampton,-1.3,Brighton Southampton
+Brighton,Tottenham,-0.1,Brighton Tottenham
+Brighton,Tottenham,0.6,Brighton Tottenham
+Brighton,WestHam,3.2,Brighton WestHam
+Brighton,WestHam,0.9,Brighton WestHam
+Brighton,Wolves,2.5,Brighton Wolves
+Brighton,Wolves,0.3,Brighton Wolves
+Chelsea,CrystalPalace,0.8,Chelsea CrystalPalace
+Chelsea,CrystalPalace,0.7,Chelsea CrystalPalace
+Chelsea,Everton,1.1,Chelsea Everton
+Chelsea,Everton,0.8,Chelsea Everton
+Chelsea,Fulham,0.7,Chelsea Fulham
+Chelsea,Fulham,1.1,Chelsea Fulham
+Chelsea,LeedsUnited,0.5,Chelsea LeedsUnited
+Chelsea,LeedsUnited,-1.2,Chelsea LeedsUnited
+Chelsea,Leicester City,-0.7,Chelsea Leicester City
+Chelsea,Leicester City,-0.8,Chelsea Leicester City
+Chelsea,Liverpool,1.9,Chelsea Liverpool
+Chelsea,Liverpool,0.2,Chelsea Liverpool
+Chelsea,ManchesterCity,-1.6,Chelsea ManchesterCity
+Chelsea,ManchesterCity,0,Chelsea ManchesterCity
+Chelsea,ManchesterUtd,0.3,Chelsea ManchesterUtd
+Chelsea,ManchesterUtd,-3.3,Chelsea ManchesterUtd
+Chelsea,NewcastleUtd,0.5,Chelsea NewcastleUtd
+Chelsea,NewcastleUtd,-0.7,Chelsea NewcastleUtd
+Chelsea,Nott'hamForest,-0.1,Chelsea Nott'hamForest
+Chelsea,Nott'hamForest,-0.5,Chelsea Nott'hamForest
+Chelsea,Southampton,1,Chelsea Southampton
+Chelsea,Southampton,0,Chelsea Southampton
+Chelsea,Tottenham,0.6,Chelsea Tottenham
+Chelsea,Tottenham,-0.4,Chelsea Tottenham
+Chelsea,WestHam,-0.2,Chelsea WestHam
+Chelsea,WestHam,-0.2,Chelsea WestHam
+Chelsea,Wolves,0.8,Chelsea Wolves
+Chelsea,Wolves,0.5,Chelsea Wolves
+CrystalPalace,Everton,0.1,CrystalPalace Everton
+CrystalPalace,Everton,-0.5,CrystalPalace Everton
+CrystalPalace,Fulham,-2.1,CrystalPalace Fulham
+CrystalPalace,Fulham,-0.1,CrystalPalace Fulham
+CrystalPalace,LeedsUnited,0.1,CrystalPalace LeedsUnited
+CrystalPalace,LeedsUnited,2.1,CrystalPalace LeedsUnited
+CrystalPalace,Leicester City,2.1,CrystalPalace Leicester City
+CrystalPalace,Leicester City,-0.6,CrystalPalace Leicester City
+CrystalPalace,Liverpool,-0.2,CrystalPalace Liverpool
+CrystalPalace,Liverpool,-1,CrystalPalace Liverpool
+CrystalPalace,ManchesterCity,-1.9,CrystalPalace ManchesterCity
+CrystalPalace,ManchesterCity,-2.1,CrystalPalace ManchesterCity
+CrystalPalace,ManchesterUtd,-1.6,CrystalPalace ManchesterUtd
+CrystalPalace,ManchesterUtd,-0.7,CrystalPalace ManchesterUtd
+CrystalPalace,NewcastleUtd,-0.9,CrystalPalace NewcastleUtd
+CrystalPalace,NewcastleUtd,-1.8,CrystalPalace NewcastleUtd
+CrystalPalace,Nott'hamForest,0.9,CrystalPalace Nott'hamForest
+CrystalPalace,Nott'hamForest,0.1,CrystalPalace Nott'hamForest
+CrystalPalace,Southampton,-0.4,CrystalPalace Southampton
+CrystalPalace,Southampton,0.1,CrystalPalace Southampton
+CrystalPalace,Tottenham,-0.6,CrystalPalace Tottenham
+CrystalPalace,Tottenham,-0.5,CrystalPalace Tottenham
+CrystalPalace,WestHam,0.4,CrystalPalace WestHam
+CrystalPalace,WestHam,0.7,CrystalPalace WestHam
+CrystalPalace,Wolves,0.4,CrystalPalace Wolves
+CrystalPalace,Wolves,-0.6,CrystalPalace Wolves
+Everton,Fulham,-0.4,Everton Fulham
+Everton,Fulham,-1,Everton Fulham
+Everton,LeedsUnited,0.9,Everton LeedsUnited
+Everton,LeedsUnited,0,Everton LeedsUnited
+Everton,Leicester City,-1.1,Everton Leicester City
+Everton,Leicester City,-0.3,Everton Leicester City
+Everton,Liverpool,-0.4,Everton Liverpool
+Everton,Liverpool,-1.9,Everton Liverpool
+Everton,ManchesterCity,0.8,Everton ManchesterCity
+Everton,ManchesterCity,-1.6,Everton ManchesterCity
+Everton,ManchesterUtd,-0.8,Everton ManchesterUtd
+Everton,ManchesterUtd,-2.4,Everton ManchesterUtd
+Everton,NewcastleUtd,-1.5,Everton NewcastleUtd
+Everton,NewcastleUtd,-1.3,Everton NewcastleUtd
+Everton,Nott'hamForest,0.5,Everton Nott'hamForest
+Everton,Nott'hamForest,0.9,Everton Nott'hamForest
+Everton,Southampton,0.2,Everton Southampton
+Everton,Southampton,0.3,Everton Southampton
+Everton,Tottenham,-0.5,Everton Tottenham
+Everton,Tottenham,-1.8,Everton Tottenham
+Everton,WestHam,-0.6,Everton WestHam
+Everton,WestHam,-1.7,Everton WestHam
+Everton,Wolves,0.9,Everton Wolves
+Everton,Wolves,0.4,Everton Wolves
+Fulham,LeedsUnited,0.9,Fulham LeedsUnited
+Fulham,LeedsUnited,0.2,Fulham LeedsUnited
+Fulham,Leicester City,-1.2,Fulham Leicester City
+Fulham,Leicester City,0,Fulham Leicester City
+Fulham,Liverpool,0,Fulham Liverpool
+Fulham,Liverpool,-0.9,Fulham Liverpool
+Fulham,ManchesterCity,-2.3,Fulham ManchesterCity
+Fulham,ManchesterCity,-1.1,Fulham ManchesterCity
+Fulham,ManchesterUtd,-1.1,Fulham ManchesterUtd
+Fulham,ManchesterUtd,-1.1,Fulham ManchesterUtd
+Fulham,NewcastleUtd,-2.8,Fulham NewcastleUtd
+Fulham,NewcastleUtd,-1.1,Fulham NewcastleUtd
+Fulham,Nott'hamForest,0.8,Fulham Nott'hamForest
+Fulham,Nott'hamForest,-0.5,Fulham Nott'hamForest
+Fulham,Southampton,0.7,Fulham Southampton
+Fulham,Southampton,1,Fulham Southampton
+Fulham,Tottenham,0.1,Fulham Tottenham
+Fulham,Tottenham,-2.2,Fulham Tottenham
+Fulham,WestHam,-0.4,Fulham WestHam
+Fulham,WestHam,-1.7,Fulham WestHam
+Fulham,Wolves,-0.3,Fulham Wolves
+Fulham,Wolves,0.6,Fulham Wolves
+LeedsUnited,Leicester City,-0.6,LeedsUnited Leicester City
+LeedsUnited,Leicester City,0.5,LeedsUnited Leicester City
+LeedsUnited,Liverpool,-1.3,LeedsUnited Liverpool
+LeedsUnited,Liverpool,0.1,LeedsUnited Liverpool
+LeedsUnited,ManchesterCity,-3.7,LeedsUnited ManchesterCity
+LeedsUnited,ManchesterCity,-2.4,LeedsUnited ManchesterCity
+LeedsUnited,ManchesterUtd,0.7,LeedsUnited ManchesterUtd
+LeedsUnited,ManchesterUtd,-1.4,LeedsUnited ManchesterUtd
+LeedsUnited,NewcastleUtd,-0.3,LeedsUnited NewcastleUtd
+LeedsUnited,NewcastleUtd,-1.8,LeedsUnited NewcastleUtd
+LeedsUnited,Nott'hamForest,1,LeedsUnited Nott'hamForest
+LeedsUnited,Nott'hamForest,0.5,LeedsUnited Nott'hamForest
+LeedsUnited,Southampton,0.5,LeedsUnited Southampton
+LeedsUnited,Southampton,0.6,LeedsUnited Southampton
+LeedsUnited,Tottenham,-0.7,LeedsUnited Tottenham
+LeedsUnited,Tottenham,-0.7,LeedsUnited Tottenham
+LeedsUnited,WestHam,0.2,LeedsUnited WestHam
+LeedsUnited,WestHam,-1.2,LeedsUnited WestHam
+LeedsUnited,Wolves,-0.5,LeedsUnited Wolves
+LeedsUnited,Wolves,-1.1,LeedsUnited Wolves
+Leicester City,Liverpool,-1.8,Leicester City Liverpool
+Leicester City,Liverpool,-1.2,Leicester City Liverpool
+Leicester City,ManchesterCity,-0.3,Leicester City ManchesterCity
+Leicester City,ManchesterCity,0.7,Leicester City ManchesterCity
+Leicester City,ManchesterUtd,-0.8,Leicester City ManchesterUtd
+Leicester City,ManchesterUtd,-2.8,Leicester City ManchesterUtd
+Leicester City,NewcastleUtd,-1.4,Leicester City NewcastleUtd
+Leicester City,NewcastleUtd,-2,Leicester City NewcastleUtd
+Leicester City,Nott'hamForest,0.2,Leicester City Nott'hamForest
+Leicester City,Nott'hamForest,-1.4,Leicester City Nott'hamForest
+Leicester City,Southampton,-0.6,Leicester City Southampton
+Leicester City,Southampton,0.5,Leicester City Southampton
+Leicester City,Tottenham,0.4,Leicester City Tottenham
+Leicester City,Tottenham,-0.4,Leicester City Tottenham
+Leicester City,WestHam,0,Leicester City WestHam
+Leicester City,WestHam,0.4,Leicester City WestHam
+Leicester City,Wolves,1.5,Leicester City Wolves
+Leicester City,Wolves,-1.2,Leicester City Wolves
+Liverpool,ManchesterCity,1.1,Liverpool ManchesterCity
+Liverpool,ManchesterCity,-2.6,Liverpool ManchesterCity
+Liverpool,ManchesterUtd,2,Liverpool ManchesterUtd
+Liverpool,ManchesterUtd,-0.5,Liverpool ManchesterUtd
+Liverpool,NewcastleUtd,0.8,Liverpool NewcastleUtd
+Liverpool,NewcastleUtd,-0.1,Liverpool NewcastleUtd
+Liverpool,Nott'hamForest,1.9,Liverpool Nott'hamForest
+Liverpool,Nott'hamForest,-0.3,Liverpool Nott'hamForest
+Liverpool,Southampton,0.8,Liverpool Southampton
+Liverpool,Southampton,2.2,Liverpool Southampton
+Liverpool,Tottenham,0.2,Liverpool Tottenham
+Liverpool,Tottenham,0,Liverpool Tottenham
+Liverpool,WestHam,0,Liverpool WestHam
+Liverpool,WestHam,1.1,Liverpool WestHam
+Liverpool,Wolves,1.8,Liverpool Wolves
+Liverpool,Wolves,-0.2,Liverpool Wolves
+ManchesterCity,ManchesterUtd,1.5,ManchesterCity ManchesterUtd
+ManchesterCity,ManchesterUtd,-1.1,ManchesterCity ManchesterUtd
+ManchesterCity,NewcastleUtd,0.9,ManchesterCity NewcastleUtd
+ManchesterCity,NewcastleUtd,0.3,ManchesterCity NewcastleUtd
+ManchesterCity,Nott'hamForest,2.6,ManchesterCity Nott'hamForest
+ManchesterCity,Nott'hamForest,1.5,ManchesterCity Nott'hamForest
+ManchesterCity,Southampton,2.2,ManchesterCity Southampton
+ManchesterCity,Southampton,2.5,ManchesterCity Southampton
+ManchesterCity,Tottenham,1.5,ManchesterCity Tottenham
+ManchesterCity,Tottenham,-0.1,ManchesterCity Tottenham
+ManchesterCity,WestHam,1.9,ManchesterCity WestHam
+ManchesterCity,WestHam,1.7,ManchesterCity WestHam
+ManchesterCity,Wolves,2,ManchesterCity Wolves
+ManchesterCity,Wolves,0.7,ManchesterCity Wolves
+ManchesterUtd,NewcastleUtd,0,ManchesterUtd NewcastleUtd
+ManchesterUtd,NewcastleUtd,-3.3,ManchesterUtd NewcastleUtd
+ManchesterUtd,Nott'hamForest,1.7,ManchesterUtd Nott'hamForest
+ManchesterUtd,Nott'hamForest,2.8,ManchesterUtd Nott'hamForest
+ManchesterUtd,Southampton,-0.2,ManchesterUtd Southampton
+ManchesterUtd,Southampton,-0.3,ManchesterUtd Southampton
+ManchesterUtd,Tottenham,0.9,ManchesterUtd Tottenham
+ManchesterUtd,Tottenham,-0.5,ManchesterUtd Tottenham
+ManchesterUtd,WestHam,0.1,ManchesterUtd WestHam
+ManchesterUtd,WestHam,-0.1,ManchesterUtd WestHam
+ManchesterUtd,Wolves,2.9,ManchesterUtd Wolves
+ManchesterUtd,Wolves,1.3,ManchesterUtd Wolves
+NewcastleUtd,Nott'hamForest,1.4,NewcastleUtd Nott'hamForest
+NewcastleUtd,Nott'hamForest,2,NewcastleUtd Nott'hamForest
+NewcastleUtd,Southampton,3.5,NewcastleUtd Southampton
+NewcastleUtd,Southampton,-0.8,NewcastleUtd Southampton
+NewcastleUtd,Tottenham,2.7,NewcastleUtd Tottenham
+NewcastleUtd,Tottenham,-0.4,NewcastleUtd Tottenham
+NewcastleUtd,WestHam,0,NewcastleUtd WestHam
+NewcastleUtd,WestHam,2.3,NewcastleUtd WestHam
+NewcastleUtd,Wolves,0.7,NewcastleUtd Wolves
+NewcastleUtd,Wolves,1,NewcastleUtd Wolves
+Nott'hamForest,Southampton,-1.3,Nott'hamForest Southampton
+Nott'hamForest,Southampton,0.9,Nott'hamForest Southampton
+Nott'hamForest,Tottenham,-1.5,Nott'hamForest Tottenham
+Nott'hamForest,Tottenham,-0.5,Nott'hamForest Tottenham
+Nott'hamForest,WestHam,-0.8,Nott'hamForest WestHam
+Nott'hamForest,WestHam,-2.3,Nott'hamForest WestHam
+Nott'hamForest,Wolves,0.8,Nott'hamForest Wolves
+Nott'hamForest,Wolves,0.2,Nott'hamForest Wolves
+Southampton,Tottenham,0.1,Southampton Tottenham
+Southampton,Tottenham,-1,Southampton Tottenham
+Southampton,WestHam,-1.2,Southampton WestHam
+Southampton,WestHam,-1.1,Southampton WestHam
+Southampton,Wolves,0.3,Southampton Wolves
+Southampton,Wolves,0.4,Southampton Wolves
+Tottenham,WestHam,1,Tottenham WestHam
+Tottenham,WestHam,-0.6,Tottenham WestHam
+Tottenham,Wolves,1,Tottenham Wolves
+Tottenham,Wolves,0.7,Tottenham Wolves
+WestHam,Wolves,0.2,WestHam Wolves
+WestHam,Wolves,0.2,WestHam Wolves
