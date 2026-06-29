@@ -1,2 +1,2 @@
 # GLM-II
-Reproducible codes for article "The analysis of paired comparison data in the presence of cyclicality and intransitivity"
+Reproducible codes for article "Modeling cyclicality and intransitivity in paired comparisons data"
