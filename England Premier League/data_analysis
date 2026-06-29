@@ -1,0 +1,326 @@
+library(MASS)
+library(glmnet)
+
+# Clean workspace
+graphics.off()  
+rm(list = ls()) 
+
+# Load Data
+Eng0 = read.csv("xgoals.pl.xlsx - working.csv") ## EPL 22-23 xG
+
+#-----------------------------#
+# 1. Matrix Generator Functions
+#-----------------------------#
+L_mat <- function(k,m) {
+  Lm = matrix(0, nrow = choose(k,2)*m, ncol = choose(k,2))
+  for (i in 1:choose(k,2)) {
+    Lm[((i-1)*m+1):(i*m), i] = 1
+  }
+  return(Lm)
+}
+
+B_mat <- function(k) {
+  M <- matrix(0, nrow = 1, ncol = k)
+  for (b in 1:(k-1)) {
+    bb = k-b
+    M1 <- matrix(0, nrow = bb, ncol = k)
+    for (i in 1:bb) {
+      M1[i,b] <- 1
+      M1[i,i+b] <- -1
+    }
+    M <- rbind(M, M1)
+  }
+  return(M[-1,])
+}
+
+C_mat <- function(k) { 
+  C1 = t(cbind(B_mat(k-1), diag(1, choose(k-1,2))))
+  r0seq = seq(k-1, 3, by=-1)
+  r1seq = 0
+  for (j in 1:length(r0seq)) {
+    r1seq[j] = sum(r0seq[1:j]) 
+  }
+  for (i in 1:(length(r0seq)-1)) { 
+    C1 = cbind(C1, rbind(matrix(0, nrow = r1seq[i], ncol = choose(r0seq[i]-1, 2)), 
+                         t(cbind(B_mat(r0seq[i]-1), diag(1, choose(r0seq[i]-1, 2)))) ))
+  }
+  return(cbind(C1, c(rep(0, choose(k, 2)-3), 1,-1,1)))
+}
+
+C_basis <- function(k) { 
+  return(t(cbind(B_mat(k-1), diag(1, choose(k-1,2)))))
+}
+
+nu_vector <- function(K) {
+  nu_ij = matrix(0, nrow = 1, ncol = 2)
+  for (i in 1:(K-1)) {
+    for (j in (i+1):K) {
+      nu_ij = rbind(nu_ij, c(i,j))
+    }
+  }
+  return(nu_ij[-1,])
+}
+
+cyclic_triads <- function(K) {
+  cijk = matrix(0, nrow = 1, ncol = 3)
+  for (i in 1:(K-2)) {
+    for (j in (i+1):(K-1)) {
+      for (k in (j+1):K) {
+        cijk = rbind(cijk, c(i,j,k))
+      }
+    }
+  }
+  return(cijk[-1,])
+}
+
+#-----------------------------#
+# 2. Parameter Initialization
+#-----------------------------#
+K = 20
+m = 2
+K2 = choose(K, 2)
+K3 = choose(K, 3)
+bY = Eng0$xG
+
+L_Mat = L_mat(K,m)
+BK = B_mat(K)
+CK = C_mat(K)
+colnames(CK) = paste("v", 1:ncol(CK), sep="")
+
+# Ensure BK is strictly full-rank for OLS pruning stability
+BK_full_rank <- BK[, -K] 
+
+all_triads = cyclic_triads(K)
+Pair_in_Triad_mat <- abs(CK)
+
+#-----------------------------#
+# 3. Initial Estimates
+#-----------------------------#
+nu_hat <- t(L_Mat) %*% bY / m 
+sigma2_hat <- t(bY - L_Mat %*% nu_hat) %*% (bY - L_Mat %*% nu_hat) / length(bY)
+
+# Project onto Linear and Cyclic Spaces
+hat_nu_linear <- BK %*% ginv(t(BK) %*% BK) %*% t(BK) %*% nu_hat
+hat_nu_cyc <- nu_hat - hat_nu_linear 
+
+# Exact Variance Formulation
+CKb <- C_basis(K)
+var_nu_hat <- diag(K2, K2)
+var_hat_nu_cyc <- CKb %*% solve(t(CKb) %*% CKb) %*% t(CKb) %*% var_nu_hat %*% t(CKb %*% solve(t(CKb) %*% CKb) %*% t(CKb))
+var_cyc_nu <- as.numeric(sigma2_hat) * diag(var_hat_nu_cyc)
+
+#----------------=================================#
+# METHOD 1: STANDARD LASSO
+#----------------=================================#
+LC <- L_Mat %*% CK
+bY_adj <- as.vector(bY - L_Mat %*% hat_nu_linear)
+
+cv_model <- cv.glmnet(LC, bY_adj, alpha = 1, intercept = F, nfolds = 3) 
+best_model <- glmnet(LC, bY_adj, alpha = 1, lambda = cv_model$lambda.min, intercept = F)
+
+lasso_coefs <- coef(best_model)[-1]
+lasso_select <- which(lasso_coefs != 0)
+lasso_select_values <- abs(lasso_coefs[lasso_select])
+
+cat("\nStandard LASSO Selected", length(lasso_select), "Triads.\n")
+
+#----------------=================================#
+# METHOD 2: HYBRID (Post-LASSO Pruning)
+#----------------=================================#
+final_cols_h <- numeric(0)
+
+if (length(lasso_select) > 0) {
+  mat_x_hybrid <- as.matrix(CK[, lasso_select, drop=FALSE])
+  qrx_h <- qr(mat_x_hybrid)
+  pivot_idx_h <- qrx_h$pivot[seq_len(qrx_h$rank)]
+  
+  final_MatX_hybrid <- mat_x_hybrid[, pivot_idx_h, drop=FALSE]
+  current_cols_hybrid <- lasso_select[pivot_idx_h]
+  current_lasso_vals <- lasso_select_values[pivot_idx_h]
+  
+  keep_idx_h <- 1:length(current_cols_hybrid)
+  
+  while(length(keep_idx_h) > 0) {
+    BC_X <- cbind(BK_full_rank, final_MatX_hybrid[, keep_idx_h, drop=FALSE])
+    p_X <- ncol(BC_X)
+    df_resid <- K2 - p_X
+    
+    if (df_resid <= 0) {
+      worst_idx <- which.min(current_lasso_vals[keep_idx_h])
+      keep_idx_h <- keep_idx_h[-worst_idx]
+      next
+    }
+    
+    fit_X <- lm.fit(BC_X, nu_hat)
+    sig2 <- sum(fit_X$residuals^2) / df_resid
+    
+    # Use ginv to safely handle real-world empirical dependencies
+    XtX_inv <- ginv(t(BC_X) %*% BC_X) 
+    se <- sqrt(sig2 * diag(XtX_inv))
+    
+    triad_idx <- K:p_X
+    t_stats <- fit_X$coefficients[triad_idx] / se[triad_idx]
+    pvals <- 2 * pt(-abs(t_stats), df = df_resid)
+    
+    if (max(pvals) > 0.05) {
+      keep_idx_h <- keep_idx_h[-which.max(pvals)]
+    } else {
+      break
+    }
+  }
+  if (length(keep_idx_h) > 0) final_cols_h <- current_cols_hybrid[keep_idx_h]
+}
+
+cat("Hybrid Post-LASSO Selected", length(final_cols_h), "Triads.\n")
+
+#----------------=================================#
+# METHOD 3: PURE FTBS (FDR + Pruning)
+#----------------=================================#
+abs_t_stats_cyc <- abs(sqrt(m * K2) * hat_nu_cyc / sqrt(var_cyc_nu))
+nu_cyc_pval <- 2 * pnorm(abs_t_stats_cyc, mean=0, sd=1, lower.tail = F) # Two-tailed edge testing
+fdr_pvals <- p.adjust(nu_cyc_pval, method = "BH")
+sig_flags <- as.numeric(fdr_pvals < 0.1) 
+
+tick_tab_colsum <- as.vector(crossprod(Pair_in_Triad_mat, sig_flags))
+tick3_col <- which(tick_tab_colsum == 3)
+tick2_col <- which(tick_tab_colsum == 2)
+tick1_col <- which(tick_tab_colsum == 1)
+
+triad_scores <- as.vector(crossprod(Pair_in_Triad_mat, abs_t_stats_cyc))
+
+test_model_fit <- function(cols_to_use) {
+  if (length(cols_to_use) == 0 || length(cols_to_use) >= K2) {
+    return(list(pval = 0, MatX = NULL, cols = NULL))
+  }
+  
+  mat_x <- as.matrix(CK[, cols_to_use, drop=FALSE])
+  if(length(cols_to_use) > 1) {
+    qrx <- qr(mat_x)
+    pivot_idx <- qrx$pivot[seq_len(qrx$rank)]
+    MatX <- mat_x[, pivot_idx, drop=FALSE]
+    cols_used <- cols_to_use[pivot_idx]
+  } else {
+    MatX <- mat_x
+    cols_used <- cols_to_use
+  }
+  
+  BC_X <- cbind(BK_full_rank, MatX)
+  fit_X <- lm.fit(BC_X, nu_hat)
+  res_X <- nu_hat - as.vector(BC_X %*% fit_X$coefficients)
+  
+  # Scale by empirical variance
+  Rn_X <- m * sum(res_X^2) / as.numeric(sigma2_hat)
+  
+  p <- ncol(BC_X)
+  lambda_BtB <- eigen(crossprod(BC_X), symmetric=TRUE, only.values=TRUE)$values
+  c_xmat <- 1 / K2
+  ev_p <- (1 - (c_xmat^2) * (lambda_BtB^2))^2
+  
+  chi_part <- rchisq(500, df = K2 - p)
+  Z_p <- matrix(rnorm(p * 500)^2, nrow = p, ncol = 500)
+  B_X <- as.vector(crossprod(Z_p, ev_p)) + chi_part
+  
+  pval <- sum(B_X > as.numeric(Rn_X)) / 500
+  return(list(pval = pval, MatX = MatX, cols = cols_used))
+}
+
+mod3 <- test_model_fit(tick3_col)
+mod2 <- test_model_fit(sort(c(tick3_col, tick2_col)))
+mod1 <- test_model_fit(sort(c(tick3_col, tick2_col, tick1_col)))
+
+# SYNTAX FIX APPLIED HERE
+final_mod <- NULL
+if (!is.null(mod3$MatX) && mod3$pval > 0.05) { 
+  final_mod <- mod3 
+} else if (!is.null(mod2$MatX) && mod2$pval > 0.05) { 
+  final_mod <- mod2 
+} else if (!is.null(mod1$MatX)) { 
+  final_mod <- mod1 
+}
+
+final_cols_ftbs <- numeric(0)
+
+if (!is.null(final_mod) && !is.null(final_mod$MatX)) {
+  keep_idx <- 1:length(final_mod$cols)
+  
+  while(length(keep_idx) > 0) {
+    BC_X <- cbind(BK_full_rank, final_mod$MatX[, keep_idx, drop=FALSE])
+    p_X <- ncol(BC_X)
+    df_resid <- K2 - p_X
+    
+    if (df_resid <= 0) {
+      worst_idx <- which.min(triad_scores[final_mod$cols[keep_idx]])
+      keep_idx <- keep_idx[-worst_idx]
+      next
+    }
+    
+    fit_X <- lm.fit(BC_X, nu_hat)
+    sig2 <- sum(fit_X$residuals^2) / df_resid
+    XtX_inv <- ginv(t(BC_X) %*% BC_X)
+    se <- sqrt(sig2 * diag(XtX_inv))
+    
+    triad_idx <- K:p_X
+    t_stats <- fit_X$coefficients[triad_idx] / se[triad_idx]
+    pvals <- 2 * pt(-abs(t_stats), df = df_resid)
+    
+    if (max(pvals) > 0.01) {
+      keep_idx <- keep_idx[-which.max(pvals)]
+    } else {
+      break
+    }
+  }
+  if (length(keep_idx) > 0) final_cols_ftbs <- final_mod$cols[keep_idx]
+}
+
+cat("Pure FTBS (FDR + Pruning) Selected", length(final_cols_ftbs), "Triads.\n")
+
+#----------------=================================#
+# 4. Final Output & Model Comparison
+#----------------=================================#
+# Define Null Model (Linear Transitivty Only) for baseline
+LB = L_Mat %*% BK
+null_lm = lm(bY ~ 0 + LB)
+
+get_model_metrics <- function(selected_cols, model_name) {
+  if(length(selected_cols) == 0) return(c(model_name, 0, AIC(null_lm), BIC(null_lm)))
+  
+  mod_lm <- lm(bY ~ 0 + LB + (L_Mat %*% CK)[, selected_cols, drop=FALSE])
+  return(c(model_name, length(selected_cols), round(AIC(mod_lm), 2), round(BIC(mod_lm), 2)))
+}
+
+res_table <- rbind(
+  c("Baseline (Linear Transitivity)", 0, round(AIC(null_lm), 2), round(BIC(null_lm), 2)),
+  get_model_metrics(lasso_select, "Standard LASSO"),
+  get_model_metrics(final_cols_h, "Hybrid (LASSO + FTBS)"),
+  get_model_metrics(final_cols_ftbs, "Pure FTBS (FDR + Pruning)")
+)
+
+colnames(res_table) <- c("Method", "Selected Triads", "AIC", "BIC")
+rownames(res_table) <- NULL
+
+cat("\n==================================================\n")
+cat("MODEL COMPARISON (EPL 22-23 xG Data)\n")
+cat("==================================================\n")
+print(as.data.frame(res_table))
+cat("==================================================\n")
+
+if(length(final_cols_ftbs) > 0) {
+  cat("\nTriads Selected by Pure FTBS:\n")
+  print(all_triads[final_cols_ftbs, , drop=FALSE])
+}
+if(length(final_cols_h) > 0) {
+  cat("\nTriads Selected by Hybrid (Post-LASSO):\n")
+  print(all_triads[final_cols_h, , drop=FALSE])
+}
+
+## FTBS selected model details
+# the model
+mod_ftbs <- lm(bY ~ 0 + LB + (L_Mat %*% CK)[, final_cols_ftbs, drop=FALSE])
+# cyclic coefficients
+mod_ftbs_cyclic_coeff <- mod_ftbs$coefficients[c(21,22,23)]
+# fitted nu
+nu_fit <- hat_nu_linear + mod_ftbs_cyclic_coeff[1]* CK[,final_cols_ftbs[1]] +
+                        + mod_ftbs_cyclic_coeff[2]*CK[,final_cols_ftbs[2]]+
+                        + mod_ftbs_cyclic_coeff[1]*CK[,final_cols_ftbs[3]]
+
+
